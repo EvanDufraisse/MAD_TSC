@@ -154,10 +154,10 @@ class AbsaOptunaObjective(object):
         pl_model, results = self._compute_test_and_validation_metrics(
             pl_model, best_model_stats
         )
-
-        results_internal_biases = self._compute_internal_biases_model(
-            pl_model, best_model_stats
-        )
+        # Deactivate computation of internal biases for now
+        # results_internal_biases = self._compute_internal_biases_model(
+        #     pl_model, best_model_stats
+        # )
 
         if self.custom_datasets_json is not None:
             custom_datasets = json.load(open(self.custom_datasets_json, "r"))
@@ -180,13 +180,13 @@ class AbsaOptunaObjective(object):
                     print("Error custom dataset {}".format(dataset_name))
                     print(e)
 
-        results_strategic_biases = {}
-        if "mt" in self.dataset_config and "rw" in self.dataset_config:
-            results_strategic_biases = self._compute_strategic_biases_model(
-                pl_model, best_model_stats
-            )
-        results["strategic_biases"] = results_strategic_biases
-        results["internal_biases"] = results_internal_biases
+        # results_strategic_biases = {}
+        # if "mt" in self.dataset_config and "rw" in self.dataset_config:
+        #     results_strategic_biases = self._compute_strategic_biases_model(
+        #         pl_model, best_model_stats
+        #     )
+        # results["strategic_biases"] = results_strategic_biases
+        # results["internal_biases"] = results_internal_biases
 
         print("Registering configuration in results json")
         self._register_model_parameters_into_results(

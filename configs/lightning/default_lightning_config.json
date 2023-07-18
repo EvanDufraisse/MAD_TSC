@@ -1,0 +1,15 @@
+{
+    "pytorch_lightning_flags":{
+        "val_check_interval": 0.33,
+        "log_every_n_steps": 50,
+        "benchmark": true,
+        "devices":1,
+        "accelerator":"gpu"
+    },
+    "pytorch_lightning_params": {
+        "log_dir": "logs/",
+        "path_checkpoints": "checkpoints/",
+        "checkpoints_topk": 1,
+        "lr_monitor": true
+    }
+}

@@ -103,7 +103,6 @@ class RawJsonlLoader(RawDataLoader):
 # endregion
 
 
-# region [tested]
 class DataSplitter(object):
     """
     Takes data as input and returns a list of lists of data, where each list of data is a split of the original data.

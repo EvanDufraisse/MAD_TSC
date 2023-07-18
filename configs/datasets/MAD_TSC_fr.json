@@ -1,0 +1,7 @@
+{
+            "name_dataset":"MAD_TSC_fr",
+            "format":"newsmtsc",
+            "folder_dataset":"MAD_TSC_fr",
+            "filenames":{"train":"train.jsonl", "test":"test.jsonl", "validation":"validation.jsonl"},
+            "splitting_strategy":{"train":[1,0,0], "test":[0,1,0], "validation":[0,0,1]}
+        }

@@ -1,0 +1,23 @@
+{
+    "optimizer":{
+        "scheduler": "warmup_linear",
+        "hyperparameters": {
+            "batch_size": [32],
+            "lr": [2e-5],
+            "epochs": [40],
+            "seeds": [42, 302, 668, 745, 343]
+        },
+        "checkpoint_metrics":{"validation_loss":"min", "validation_f1score":"max"},
+        "optuna_metrics": {"test_loss":"min", "test_f1score":"max"},
+        "adam_epsilon": 1e-6,
+        "weight_decay": 0.01,
+        "proportion_warmup": 0.06,
+        "precision": 16,
+        "max_batch_size_per_gpu": 16,
+        "num_workers": 2,
+        "direction": "min",
+    },
+    "freeze_layers": [],
+    "freeze_representation_layer":false,
+    "partial_gradient_wordsembeddings":false
+}
