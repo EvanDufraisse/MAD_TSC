@@ -40,13 +40,25 @@ Example bash script is given in folder scripts
 
 The command to launch finetuning is the following:
 
-You must beforehand define three environment variables and create the corresponding folders:
+You must complete the following <> fields with your own values:
 
 
 ```bash
+
+#!/bin/bash
+
+
+eval "$(conda shell.bash hook)"
+
+conda activate tscbench
+
+export UUID=$RANDOM
+export TOKENIZERS_PARALLELISM=false
 export DATA_SCRATCH=<path to put temporary input files>
 export EXPERIMENT_DIR=<path to the output of the experiments>
 export EXPERIMENT_SCRATCH=<path with the most I/O operation>
+rsync -avh --progress <path to your dataset root folder> "/scratch/data/"$UUID"/"
+
 
 tscbench finetune tsc \
 -n <name of the experiment> \
@@ -59,3 +71,5 @@ tscbench finetune tsc \
 --optimizer-config <path to optimizer configuration> \
 --keep-best-models # Keep best model for a given run, --keep-all-models to keep all models checkpoints
 ```
+
+Also check the config readme to configure for other models and datasets
