@@ -1,0 +1,1 @@
+{"absa_model": "td", "fusion_layer": {"type": "attention", "kwargs": {}}, "representation_layer": {"type": "mlm_config", "kwargs": {}}, "classification_layer": {"type": "categorical", "kwargs": {"tied": false}}, "loss_layer": {"type": "CE", "kwargs": {"weighted": false}}, "other_args": {"replace_by_main_mention": false, "replace_by_special_token": null}}
