@@ -166,6 +166,8 @@ class HyperparameterSelection(object):
             already_added_config = set([])
             idx = 0
             while len(output) < k:
+                if not (k in rank_mapping):
+                    break
                 config, trial = rank_mapping[idx]
                 str_config = str(sorted(list(config.items()), key=lambda x: x[0]))
                 if str_config not in already_added_config:
