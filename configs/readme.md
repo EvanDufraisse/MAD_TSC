@@ -3,6 +3,7 @@
 Several configuration files are necessary as input for the model.
 Below we describe the different configuration files and their content.
 
+Variables refered as <NAME_OF_VARIABLE> are the one supplied as part of the command line arguments.
 
 ## Dataset configuration
 
@@ -17,6 +18,24 @@ Below we describe the different configuration files and their content.
 ~~~
 
 ## Lightning configuration
+
+~~~ json
+{
+    "pytorch_lightning_flags":{
+        "val_check_interval": 0.33, # Run validation every 33% of an epoch
+        "log_every_n_steps": 50, # Log every 50 steps
+        "benchmark": true, # For performance, if the input size is constant
+        "devices":1, # Number of GPUs to use
+        "accelerator":"gpu" # Use GPU
+    },
+    "pytorch_lightning_params": {
+        "log_dir": "logs/", # Folder where to store the logs as a children to $EXPERIMENT_DIR/<SUB_PATH_FINAL_FOLDER>/<NAME_EXPERIMENT>
+        "path_checkpoints": "checkpoints/", # Folder where to store the checkpoints as a children to $EXPERIMENT_DIR/<SUB_PATH_FINAL_FOLDER>/<NAME_EXPERIMENT>
+        "checkpoints_topk": 1, # Number of checkpoints to keep
+        "lr_monitor": true # Monitor the learning rate
+    }
+}
+~~~
 
 ## Models configuration
 
