@@ -40,7 +40,13 @@ Example bash script is given in folder scripts
 
 The command to launch finetuning is the following:
 
+You must beforehand define three environment variables and create the corresponding folders:
+
+
 ```bash
+export DATA_SCRATCH=<path to put temporary input files>
+export EXPERIMENT_DIR=<path to the output of the experiments>
+export EXPERIMENT_SCRATCH=<path with the most I/O operation>
 
 tscbench finetune tsc \
 -n <name of the experiment> \
@@ -51,4 +57,5 @@ tscbench finetune tsc \
 --gpu-pl-config <path to gpu config> \
 --sub-path-final-folder <subpath where the output model and statistiqcs> \
 --optimizer-config <path to optimizer configuration> \
+--keep-best-models # Keep best model for a given run, --keep-all-models to keep all models checkpoints
 ```

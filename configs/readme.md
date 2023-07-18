@@ -39,6 +39,41 @@ Variables refered as <NAME_OF_VARIABLE> are the one supplied as part of the comm
 
 ## Models configuration
 
+Configurations of models used in the paper are supplied.
+
+- SPC model : "spc_model_default.json"
+- TD model : "td_model_default.json"
+- Prompt model: "prompt_model_default_[lang].json" modify according to your language
+
+
 ## Optimizers configuration
 
+Define the training hyperparameters and the optimizer to use.
+We only comment the parts that the user may want to modify.
+
+~~~ json
+{
+    "optimizer":{
+        "scheduler": "warmup_linear", # Type of scheduler to use
+        "hyperparameters": {
+            "batch_size": [32], # Effective batch size, no vram consideration
+            "lr": [2e-5], # Learning rate
+            "epochs": [40], # Number of epochs to train
+            "seeds": [42, 302, 668, 745, 343] # Seeds to use for the different runs
+        },
+        "checkpoint_metrics":{"validation_loss":"min", "validation_f1score":"max"},
+        "optuna_metrics": {"test_loss":"min", "test_f1score":"max"},
+        "adam_epsilon": 1e-6,
+        "weight_decay": 0.01,
+        "proportion_warmup": 0.06,
+        "precision": 16, # 16 for float16, 32 for float32
+        "max_batch_size_per_gpu": 16, # Maximum batch size per GPU, vram consideration
+        "num_workers": 2, # Number of workers for the dataloader
+        "direction": "min", # Optuna setting
+    },
+    "freeze_layers": [],
+    "freeze_representation_layer":false,
+    "partial_gradient_wordsembeddings":false
+}
+~~~
 
