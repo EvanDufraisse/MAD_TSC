@@ -73,3 +73,7 @@ tscbench finetune tsc \
 ```
 
 Also check the config readme to configure for other models and datasets
+
+The results will be stored in the folder of the experiment under $EXPERIMENT_DIR
+
+Independent inference script is not provided yet...
