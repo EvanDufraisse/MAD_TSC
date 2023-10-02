@@ -1,5 +1,20 @@
 # MAD-TSC: A Multilingual Aligned News Dataset for Target-dependent Sentiment Classification
 
+MAD-TSC is a multilingual aligned dataset for target-dependent sentiment classification (TSC) on the news domain.
+Target-dependent classification (TSC) is closely related to the task of Aspect-Based Sentiment Classification (ABSC), a classification step in the overall study of Aspect-Based Sentiment Analysis (ABSA).
+
+The aim of TSC is to determine the sentiment expressed towards a target in a given context:
+
+~~~
+"I think <John> hasn't done a great work compared to Sam." -> Sentiment expressed towards <John> is negative
+~~~
+
+- The dataset contains 5 110 entries  1 839 negative, 2 011 neutral and 1 260 positive.
+
+The dataset was built using a European initiative of professionally translated news articles [VoxEurop](https://voxeurop.eu).
+
+The aligned nature of the dataset allows for multilingual experiments, as is shown in the paper. In the context of those experiments, parts of the dataset have also been translated to evaluate performances of automatic translation algorithms (M2M100 and DeepL).
+
 ## Dataset
 
 The dataset is available in the `data` folder. The `data` folder contains the following files:
