@@ -1,6 +1,6 @@
 # MAD-TSC: A Multilingual Aligned News Dataset for Target-dependent Sentiment Classification
 
-Link to ACL 2023 related paper: [paper](https://aclanthology.org/2023.acl-long.461.pdf)
+Link to ACL 2023 related paper: [paper](https://aclanthology.org/2023.acl-long.461)
 
 MAD-TSC is a multilingual aligned dataset for target-dependent sentiment classification (TSC) on the news domain.
 Target-dependent classification (TSC) is closely related to the task of Aspect-Based Sentiment Classification (ABSC), a classification step in the overall study of Aspect-Based Sentiment Analysis (ABSA).
